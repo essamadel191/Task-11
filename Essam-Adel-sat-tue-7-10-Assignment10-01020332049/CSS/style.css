@@ -1,0 +1,55 @@
+body {
+  background: #e8f0f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.forecast-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.forecast,
+.today.forecast {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.forecast-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.forecast-content {
+  text-align: center;
+}
+
+.forecast-icon img {
+  max-width: 100%;
+}
+
+.degree {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.num {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.custom {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.forecast-content span {
+  margin: 5px 10px;
+  display: inline-block;
+  color: #555;
+}
