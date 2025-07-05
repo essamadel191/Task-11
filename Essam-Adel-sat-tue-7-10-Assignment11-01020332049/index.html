@@ -3,21 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Login System</title>
+  <title>Weather</title>
 
   <link rel="stylesheet" href="./CSS/bootstrap.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./CSS/all.min.css"/>
   <link rel="stylesheet" href="./CSS/style.css"/>
 </head>
 <body>
 
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-5 py-4">
+  <div class="container-fluid">
+    <!-- Brand with animated icon -->
+    <a class="navbar-brand ms-3 d-flex align-items-center gap-2" href="#">
+      <div class="weather-icon-wrapper">
+        <i class="fas fa-sun icon-sun"></i>
+        <i class="fas fa-moon icon-moon"></i>
+      </div>
+      <span class="fw-bold">Weather</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end pe-5" id="navbarNavAltMarkup">
+      <div class="navbar-nav gap-4">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4 flex-grow-1">
   <div class="container py-4">
-    <input type="text" id="locationInput" class="form-control mb-4" placeholder="Enter location...">
-    <div class="forecast-container" id="forecast">
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="input-group search-group">
+        <input type="text" id="locationInput" class="form-control custom-input" placeholder="Enter location..." />
+        <button class="btn custom-btn mx-0" id="searchBtn">Find</button>
+      </div>
+    </div>
+
+    <div class="forecast-container mt-5" id="forecast">
       <!-- Weather cards will appear here -->
     </div>
   </div>
+
+</main>
+
+
+<footer class="custom-footer text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md-6 mb-3">
+        <form class="subscribe-form d-flex">
+          <input
+            type="email"
+            class="subscribe-input"
+            placeholder="Enter your email to subscribe..."
+          />
+          <button type="submit" class="btn-subscribe">Subscribe</button>
+        </form>
+      </div>
+      <div class="col-md-4 text-center text-md-end mb-3 social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center copyright-text mt-3">
+        © 2025 Unknown Company. Designed by Essam Adel. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
 
   <script src="./JS/bootstrap.bundle.min.js"></script>
   <script src="./JS/script.js"></script>

@@ -1,7 +1,108 @@
-body {
-  background: #e8f0f8;
-  font-family: 'Segoe UI', sans-serif;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #e8f0f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.weather-icon-wrapper {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+
+.weather-icon-wrapper i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  opacity: 0;
+  animation: rotateFade 8s infinite linear;
+}
+
+.weather-icon-wrapper .fa-sun {
+  color: #ffc107;
+  animation-delay: 0s;
+}
+
+.weather-icon-wrapper .fa-moon {
+  color: #6c757d;
+  animation-delay: 4s;
+}
+
+@keyframes rotateFade {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: rotate(144deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+
+
+main {
+  flex-grow: 1;
+}
+.search-group {
+    max-width: 1200px;
+    width: 100%;
+    background-color: linear-gradient(135deg, #ffffff, #e3f2fd);
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .custom-input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50px 0 0 50px;
+  }
+
+  .custom-input::placeholder {
+    color: #aaa;
+  }
+
+  .custom-input:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .custom-btn {
+    background-color: #00aaff;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    padding: 0 30px;
+    transition: background 0.3s ease;
+  }
+
+  .custom-btn:hover {
+    background-color: #008ecc;
+  }
 
 .forecast-container {
   display: flex;
@@ -10,13 +111,22 @@ body {
 }
 
 .forecast,
-.today.forecast {
+.today-forecast {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
   flex: 1 1 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
 }
+
+.forecast:hover,
+.today-forecast:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 
 .forecast-header {
   display: flex;
@@ -30,6 +140,7 @@ body {
 
 .forecast-icon img {
   max-width: 100%;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
 }
 
 .degree {
@@ -52,4 +163,92 @@ body {
   margin: 5px 10px;
   display: inline-block;
   color: #555;
+}
+
+
+
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* ############ Footer ################## */
+
+.custom-footer {
+  background-color: #ffffff;
+  color: black;
+}
+
+.subscribe-form {
+  background-color: #e8f0f8;
+  border-radius: 30px;
+  padding: 5px 5px 5px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.subscribe-input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  flex: 1;
+  outline: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.subscribe-input::placeholder {
+  color: #888;
+}
+
+.btn-subscribe {
+  background-color: #00baff;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-subscribe:hover {
+  background-color: #009edb;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8f0f8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #00baff;
+  margin-left: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #00baff;
+  color: #fff;
+}
+
+.copyright-text {
+  font-size: 14px;
+  color: #aaa;
 }
